@@ -36,49 +36,18 @@ class TransactionList extends StatelessWidget {
               return TransactionItem(
                   transaction: transactions[index],
                   deleteTransaction: deleteTransaction);
-              // return Card(
-              //   child: Row(
-              //     children: <Widget>[
-              //       Container(
-              //         margin: EdgeInsets.symmetric(
-              //           vertical: 8,
-              //           horizontal: 16,
-              //         ),
-              //         decoration: BoxDecoration(
-              //           border: Border.all(
-              //             color: Theme.of(context).primaryColorLight,
-              //             width: 2,
-              //           ),
-              //         ),
-              //         padding: EdgeInsets.all(8),
-              //         child: Text(
-              //           '\$${transactions[index].amount.toStringAsFixed(2)}',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 20,
-              //             color: Theme.of(context).primaryColorDark,
-              //           ),
-              //         ),
-              //       ),
-              //       Column(
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: <Widget>[
-              //           Text(
-              //             transactions[index].title,
-              //             style: Theme.of(context).textTheme.headline6,
-              //           ),
-              //           Text(
-              //             DateFormat.yMMMMEEEEd()
-              //                 .format(transactions[index].date),
-              //             style: TextStyle(
-              //               color: Colors.grey,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // );
+              //Needed only when state of an item (widget) inside list has data bounded to that item
+              //ListView(
+              //  children: transactions
+              //    .map(
+              //      (transaction) => TransactionItem(
+              //        key: ValueKey(transaction.id),
+              //        transaction: transaction,
+              //        deleteTransaction: deleteTransaction,
+              //      ),
+              //    )
+              //  .toList(),
+              //);
             },
             itemCount: transactions.length,
           );
